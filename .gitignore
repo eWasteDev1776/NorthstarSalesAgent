@@ -1,0 +1,67 @@
+# Next.js / Frontend
+/frontend/node_modules
+/frontend/.next/
+/frontend/out/
+/frontend/.vercel
+/frontend/build
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Python / Backend
+/backend/venv/
+/backend/__pycache__/
+/backend/*.py[cod]
+/backend/*$py.class
+/backend/*.so
+/backend/.Python
+/backend/env/
+/backend/build/
+/backend/develop-eggs/
+/backend/dist/
+/backend/downloads/
+/backend/eggs/
+/backend/.eggs/
+/backend/lib/
+/backend/lib64/
+/backend/parts/
+/backend/sdist/
+/backend/var/
+/backend/wheels/
+/backend/*.egg-info/
+/backend/.installed.cfg
+/backend/*.egg
+/backend/.env
+/backend/.venv
+/backend/.pytest_cache/
+/backend/.coverage
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+
+# Data storage
+*.csv
+*.json.backup
+/backend/vector_store/chroma/
+/backend/vector_store/faiss/

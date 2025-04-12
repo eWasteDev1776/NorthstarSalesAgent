@@ -59,9 +59,6 @@ A modern, visually engaging, and easy-to-use interface for the Northstar AI agen
 
 ---
 
-## Next Steps
-
-- [ ] Generate Figma mockup of lead search + dashboard
 - [ ] Build `globals.css` + Tailwind config with theme colors
 - [ ] Implement initial layout shell using sidebar + top nav
 

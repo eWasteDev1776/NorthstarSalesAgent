@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 15% 8%;
+    --background-soft: 240 14% 10%;
+    --foreground: 0 0% 95%;
+    
+    --card: 240 13% 11%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 240 13% 13%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 260 84% 65%;
+    --primary-foreground: 0 0% 98%;
+    --primary-muted: 260 84% 20%;
+    --primary-accent: 260 84% 70%;
+    --primary-rgb: 140, 82, 255;
+    
+    --secondary: 240 10% 16%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --muted: 240 5% 20%;
+    --muted-foreground: 240 5% 65%;
+    
+    --accent: 260 50% 30%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    --border: 240 5% 26%;
+    --input: 240 5% 26%;
+    --ring: 240 5% 64.9%;
+    
+    --radius: 1rem;
+    
+    /* Custom Shadcn Overrides */
+    --shadow-color: 260 60% 3%;
+    --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+      0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+      1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+    --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+      0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+      2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+      5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+    --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+      1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+      2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+      4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+      7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+      11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+      17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+      25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+  }
+
+  .light {
+    --background: 0 0% 98%;
+    --background-soft: 0 0% 95%;
+    --foreground: 240 10% 3.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    --primary: 260 84% 55%;
+    --primary-foreground: 0 0% 98%;
+    --primary-muted: 260 84% 85%;
+    --primary-accent: 260 84% 50%;
+    --primary-rgb: 126, 58, 242;
+    
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 5% 12%;
+    
+    --muted: 240 5% 92%;
+    --muted-foreground: 240 5% 30%;
+    
+    --accent: 260 50% 75%;
+    --accent-foreground: 260 50% 20%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 65%;
+    
+    --shadow-color: 260 20% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Terminal-style text and animations */
+  .typewriter {
+    @apply overflow-hidden whitespace-nowrap border-r-2 border-primary animate-typewriter;
+  }
+  
+  .typewriter::after {
+    @apply content-[''] inline-block w-2 h-5 ml-1 bg-primary animate-blink;
+  }
+  
+  /* Glow effects */
+  .glow {
+    @apply shadow-glow transition-shadow duration-300;
+  }
+  
+  .glow-hover:hover {
+    @apply shadow-glow;
+  }
+  
+  /* Button styles */
+  .btn {
+    @apply px-4 py-2 rounded-2xl transition-all duration-200 font-medium;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:scale-105 active:scale-95;
+  }
+  
+  /* Lead tag pills */
+  .tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .tag-cold {
+    @apply bg-blue-500/20 text-blue-200;
+  }
+  
+  .tag-warm {
+    @apply bg-warning/20 text-warning;
+  }
+  
+  .tag-hot {
+    @apply bg-destructive/20 text-destructive;
+  }
+  
+  /* Agent log terminal */
+  .agent-log {
+    @apply font-mono text-sm bg-background-soft rounded-2xl p-4 overflow-auto;
+  }
+  
+  /* Card with glow */
+  .card-glow {
+    @apply bg-card rounded-2xl p-6 shadow-glow;
+  }
+}
